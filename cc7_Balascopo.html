@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+        <style>
+        	body {
+                background-color: rgb(253, 186, 219);
+            	text-align: center;
+            	font-family: 'Georgia';
+                color: rgb(128, 0, 107);
+            }
+            button {
+                padding: 10px; 
+                background:rgb(246, 198, 255);
+                cursor: pointer;
+            }
+            a {
+                font-size: 0.5em; 
+                color: maroon;
+                text-decoration: none;
+            }
+        </style>
+
+	</head>
+	<body onload="generateOTP()">
+	<h1> Final Verification Step </h1>
+	<h2> Current OTP: <span id="myNumber"> _ _ _ _ _ _ </span> <a onclick="generateOTP()" href="#"> New OTP </a></h2>
+    <button onclick="validateOTP()"> Enter the OTP as shown above </button>
+	
+    <script>
+        function generateOTP() {
+            var otpElement = document.getElementById('myNumber');
+            var otp = generateRandomOTP();
+            otpElement.innerText = otp;
+        }
+
+        function generateRandomOTP() { 
+            return Math.floor(100000 + Math.random() * 900000); // this generates a random number from 100000 to 999999
+        }
+
+        function validateOTP() {
+            var enteredOTP = prompt("Enter the OTP as shown above"); // this is the user input
+            var currentOTP = document.getElementById('myNumber').innerText; // this displays the otp
+            
+            if (enteredOTP === currentOTP) { // this verifies the entered OTP with the OTP
+                window.open("https://www.youtube.com/@lifewithmiley3602/featured");
+            } else {
+                alert("Entered OTP is incorrect. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

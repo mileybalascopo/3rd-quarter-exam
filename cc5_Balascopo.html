@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Challenge 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(253, 186, 219);
+            font-family: 'Georgia';
+        }
+    </style>
+</head>
+<body>
+    <h1>Modified FLAMES</h1>
+    
+    <input type="text" id="text1">
+    <br><br>
+    <input type="text" id="text2">
+    <br><br>
+    <button onclick="addname()">Match Names</button>
+    <h3 id="names"></h3>
+
+    <h4>FLAMES Result:</h4>
+    <h3 id="result"></h3>
+
+    <script>
+        function addname() {
+            var name1 = document.getElementById('text1').value;
+            var name2 = document.getElementById('text2').value;
+            var count = namecount(name1, name2); //this calculates the characters in the combined names
+            flames(count);
+        }
+
+        function namecount(name1, name2) {
+            var namechar = name1 + name2; // this will concatenate the names
+            var count = 0;
+            for (var i = 0; i < namechar.length; i++) { // this will count the combined letters of name1 & name2
+                var ch = namechar.charAt(i);
+                if (ch !== " ") { // this will exclude the spaces from the count
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function flames(count) {              
+            var flamescount = count % 6; // this calculates the modulu of the combined names
+
+            switch(flamescount) { // this will determine the FLAMES result based on its count
+                case 1:
+                    document.getElementById("result").innerHTML = "Friends";
+                    break;
+
+                case 2:
+                    document.getElementById("result").innerHTML = "Lovers";
+                    break;
+
+                case 3:
+                    document.getElementById("result").innerHTML = "Acquaintances";
+                    break;
+
+                case 4:
+                    document.getElementById("result").innerHTML = "Marriage";
+                    break;
+
+                case 5:
+                    document.getElementById("result").innerHTML = "Enemies";
+                    break;
+
+                case 0:
+                    document.getElementById("result").innerHTML = "Sweethearts";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

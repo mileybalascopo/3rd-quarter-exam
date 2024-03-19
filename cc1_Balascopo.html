@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Challenge 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: rgb(253, 186, 219);
+                font-family: 'Georgia';
+            }
+
+            span {
+                background-color: rgb(255, 255, 173);
+                margin: 10px;
+                padding: 5px;
+                cursor: pointer; 
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SRC Honesty Store</h1>
+        <div>
+            <!-- interactive menu with their prices --> 
+            <span onclick="totalP(50)">Burger - P50.00</span>
+            <span onclick="totalP(30)">Fries - P30.00</span>
+            <span onclick="totalP(20)">Juice - P20.00</span>
+        </div>
+
+        <h4>The total payment is:</h4>
+        <h3 id="total">0</h3>
+
+        <!-- this will clear the total payment-->
+        <span onclick="clearP()">Clear</span>
+
+        <script>
+            let total = 0;
+            
+            // this will update the total payment
+            function totalP(price) {
+                total += price; 
+                document.getElementById("total").innerHTML = total; 
+            }
+            
+            // this will clear the total payment
+            function clearP(){
+                total = 0;
+                document.getElementById("total").innerHTML = total; 
+            }
+        </script>
+    </body>
+</html>

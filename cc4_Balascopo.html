@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 4
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: rgb(253, 186, 219);
+                font-family: 'Georgia';
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Replace All </h1>
+
+        <p id="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <button onclick="cchange()">Replace</button>
+        <p id="parap"></p>
+
+        <script>
+            function cchange(){
+                var paragraph = document.getElementById("para").textContent;
+                var str1 = prompt("input the character or string that needs to be replaced: "); // this will ask for the string to be replaced
+                var str2 = prompt("what will you replace it with?: "); // this will ask what to replace the selected string with
+
+
+                var newparagraph = paragraph.replaceAll(str1,str2); // this will replace str1 with str2
+                document.getElementById("parap").textContent = newparagraph;
+            }
+        </script>
+    </body>
+</html>
